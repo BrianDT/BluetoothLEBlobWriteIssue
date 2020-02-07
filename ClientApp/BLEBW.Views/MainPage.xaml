@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:BluetoothLEBlobWriteIssue.ViewModelInterfaces;assembly=BLEBW.ViewModelInterfaces"
+             mc:Ignorable="d"
+             x:Class="BluetoothLEBlobWriteIssueClientApp.MainPage">
+    <Page.Resources>
+        <Style x:Key="SourceButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#FF80A4C0"/>
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            <Setter Property="VerticalOptions" Value="Start"/>
+        </Style>
+        <Style x:Key="SourceButtonDisabledStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="LightGray"/>
+            <Setter Property="TextColor" Value="Gray"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            <Setter Property="VerticalOptions" Value="Start"/>
+        </Style>
+    </Page.Resources>
+
+    <ContentPage.Content x:DataType="vm:IImagePickerViewModel">
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            
+            <Button Text="Connect" Command="{Binding ConnectCommand}"
+                    Style="{StaticResource SourceButtonStyle}"
+                    />
+            <Label Text="Take a photo that will be sent via BLE to the service" HorizontalOptions="Center" VerticalOptions="Start"
+                   Margin="20"/>
+            <Button Text="Use Camera" Command="{Binding GotoCameraCommand}"
+                    IsVisible="{Binding CameraSourceAvailable, Mode=OneWay}"
+                    Style="{StaticResource SourceButtonDisabledStyle}"
+                    ContentLayout="Top, 4"
+                    Margin="0,0,0,24">
+                <Button.ImageSource>
+                    <OnPlatform x:TypeArguments="ImageSource">
+                        <On Platform="iOS, Android" Value="photo_icon.png" />
+                        <On Platform="UWP" Value="Assets/photo_icon.png" />
+                    </OnPlatform>
+                </Button.ImageSource>
+                <Button.Triggers>
+                    <DataTrigger TargetType="Button"
+                                 Binding="{Binding Path=IsConnected}"
+                                 Value="True">
+                        <Setter Property="Style" Value="{StaticResource SourceButtonStyle}" />
+                    </DataTrigger>
+                </Button.Triggers>
+                <!--<VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup Name="ConnectionStates">
+                        <VisualState Name="NotConnected" >
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="LightGray" />
+                                <Setter Property="TextColor" Value="Gray" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState Name="Connected" />
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>-->
+
+            </Button>
+
+            <Label Text="Sending Image" HorizontalOptions="Center" VerticalOptions="Center"
+                   FontAttributes="Bold"
+                   FontSize="Medium"
+                   IsVisible="{Binding SendingImage, Mode=OneWay}"/>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\BLEBW.Models\BLEBW.Models.csproj" />
+    <ProjectReference Include="..\..\Shared\Framework.VMUtilities\Framework.VMUtilities.csproj" />
+    <ProjectReference Include="..\..\Shared\FrameworkInterfaces\FrameworkInterfaces.csproj" />
+    <ProjectReference Include="..\BLEBWS.ServiceInterfaces\BLEBWS.ServiceInterfaces.csproj" />
+    <ProjectReference Include="..\BLEBWS.ViewInterfaces\BLEBWS.ViewInterfaces.csproj" />
+    <ProjectReference Include="..\BLEBWS.ViewModelInterfaces\BLEBWS.ViewModelInterfaces.csproj" />
+  </ItemGroup>
+
+</Project>

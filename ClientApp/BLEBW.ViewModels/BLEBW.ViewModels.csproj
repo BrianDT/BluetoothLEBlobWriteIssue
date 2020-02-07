@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>BluetoothLEBlobWriteIssueClientApp.ViewModels</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\BLEBW.Models\BLEBW.Models.csproj" />
+    <ProjectReference Include="..\..\Shared\Framework.VMUtilities\Framework.VMUtilities.csproj" />
+    <ProjectReference Include="..\BLEBW.ServiceInterfaces\BLEBW.ServiceInterfaces.csproj" />
+    <ProjectReference Include="..\BLEBW.ViewModelInterfaces\BLEBW.ViewModelInterfaces.csproj" />
+  </ItemGroup>
+
+</Project>

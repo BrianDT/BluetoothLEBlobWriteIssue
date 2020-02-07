@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Vssl.Samples.Framework.Forms</RootNamespace>
+    <AssemblyName>Vssl.Samples.Framework.Forms</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991537" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FrameworkInterfaces\FrameworkInterfaces.csproj" />
+  </ItemGroup>
+
+</Project>

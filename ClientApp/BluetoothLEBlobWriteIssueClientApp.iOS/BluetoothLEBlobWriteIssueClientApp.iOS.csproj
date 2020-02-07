@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{629590DA-B846-409F-B896-286493E04818}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>BluetoothLEBlobWriteIssueClientApp.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>BluetoothLEBlobWriteIssueClientApp.iOS</AssemblyName>
+    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer: Michael Pothecary (5Q6PMLGVS7)</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>None</MtouchLink>
+    <MtouchInterpreter>-all</MtouchInterpreter>
+    <CodesignProvision>Test</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Services\CameraDelegate.cs" />
+    <Compile Include="Services\DispatchAdapter.cs" />
+    <Compile Include="Services\NavigationService.cs" />
+    <Compile Include="Services\PlatformProperties.cs" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Plugin.BluetoothLE">
+      <Version>6.2.6</Version>
+    </PackageReference>
+    <PackageReference Include="System.Reflection.Emit">
+      <Version>4.3.0</Version>
+      <ExcludeAssets>all</ExcludeAssets>
+    </PackageReference>
+    <PackageReference Include="Unity">
+      <Version>5.11.3</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991537" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="Resources\photo_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\photo_icon%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\photo_icon%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\BLEBW.Models\BLEBW.Models.csproj">
+      <Project>{8e64b355-e2b5-485d-bf85-99c55bde99c0}</Project>
+      <Name>BLEBW.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Framework.Forms\Framework.Forms.csproj">
+      <Project>{19de0796-2eab-4bfd-a9ce-e8054269ff9a}</Project>
+      <Name>Framework.Forms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Framework.Helpers\Framework.Helpers.csproj">
+      <Project>{2159867d-e717-4416-a95b-017a317c3e90}</Project>
+      <Name>Framework.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Framework.VMUtilities\Framework.VMUtilities.csproj">
+      <Project>{9d81aa3e-523e-471c-bcaf-6c49598fd76e}</Project>
+      <Name>Framework.VMUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\FrameworkInterfaces\FrameworkInterfaces.csproj">
+      <Project>{99af185a-8a11-4034-ab81-087a9beedfdf}</Project>
+      <Name>FrameworkInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\UnityDIFacade\UnityDIFacade.csproj">
+      <Project>{9356fa6d-91e6-47a4-8d67-c5e17fed3208}</Project>
+      <Name>UnityDIFacade</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLEBW.ServiceInterfaces\BLEBW.ServiceInterfaces.csproj">
+      <Project>{cdd38f98-11dc-4b10-a92f-e8b775b9cad3}</Project>
+      <Name>BLEBW.ServiceInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLEBW.Services\BLEBW.Services.csproj">
+      <Project>{cb87f234-a34d-4f25-9f3d-fd2f205fb34e}</Project>
+      <Name>BLEBW.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLEBW.ViewInterfaces\BLEBW.ViewInterfaces.csproj">
+      <Project>{378a6d16-94e2-475a-8375-c4c49cadfc4e}</Project>
+      <Name>BLEBW.ViewInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLEBW.ViewModelInterfaces\BLEBW.ViewModelInterfaces.csproj">
+      <Project>{0aec72ba-3a7c-43d5-9d3b-0432a974c79a}</Project>
+      <Name>BLEBW.ViewModelInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLEBW.ViewModels\BLEBW.ViewModels.csproj">
+      <Project>{be129476-c689-4487-9a4a-20c7b862d2cf}</Project>
+      <Name>BLEBW.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLEBW.Views\BLEBW.Views.csproj">
+      <Project>{eabd57dd-7f5f-4fac-a97b-5867d93a226b}</Project>
+      <Name>BLEBW.Views</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

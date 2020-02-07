@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:BluetoothLEBlobWriteIssueServerApp.Views.Converters"
+             x:Class="BluetoothLEBlobWriteIssueServerApp.Views.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ByteToImageFieldConverter x:Key="imageConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <StackLayout>
+        <Label Text="last image from client"
+               VerticalOptions="Start" 
+               HorizontalOptions="CenterAndExpand" 
+               Margin="60"/>
+
+        <!-- Display the last image sent from the client -->
+        <Image Source="{Binding LatestImage, Mode=OneWay, Converter={StaticResource imageConverter}}"
+               VerticalOptions="CenterAndExpand" 
+               HorizontalOptions="CenterAndExpand"/>
+
+        <StackLayout Orientation="Horizontal" Margin="40" HorizontalOptions="CenterAndExpand">
+            <Label Text="Bytes received: "/>
+            <Label Text="{Binding BytesReceived, Mode=OneWay}"/>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>

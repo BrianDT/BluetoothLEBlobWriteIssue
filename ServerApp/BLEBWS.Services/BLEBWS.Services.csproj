@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NLog" Version="4.6.8" />
+    <PackageReference Include="Plugin.BluetoothLE" Version="6.2.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\BLEBW.Models\BLEBW.Models.csproj" />
+    <ProjectReference Include="..\BLEBWS.ServiceInterfaces\BLEBWS.ServiceInterfaces.csproj" />
+    <ProjectReference Include="..\BLEBWS.ViewInterfaces\BLEBWS.ViewInterfaces.csproj" />
+  </ItemGroup>
+
+</Project>

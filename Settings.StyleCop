@@ -1,0 +1,16 @@
+<StyleCopSettings Version="105">
+  <GlobalSettings>
+    <CollectionProperty Name="RecognizedWords">
+      <Value>awaitable</Value>
+      <Value>co-ordainate</Value>
+      <Value>Deserialises</Value>
+      <Value>initialise</Value>
+      <Value>Initialise</Value>
+      <Value>initialised</Value>
+      <Value>protobuf</Value>
+      <Value>Serialise</Value>
+      <Value>serialised</Value>
+      <Value>Xamarin</Value>
+    </CollectionProperty>
+  </GlobalSettings>
+</StyleCopSettings>
