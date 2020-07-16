@@ -23,7 +23,6 @@ namespace BluetoothLEBlobWriteIssueServerApp.Droid
     using NLog;
     using NLog.Config;
     using NLog.Targets;
-    using Plugin.CurrentActivity;
     using Unity;
     using Unity.Lifetime;
     using UnityDIFacade;
@@ -68,7 +67,6 @@ namespace BluetoothLEBlobWriteIssueServerApp.Droid
         public override void OnCreate()
         {
             base.OnCreate();
-            CrossCurrentActivity.Current.Init(this);
             AppHelper.AppContext = this;
             this.ConfigureLogging();
             this.Bootstrap();

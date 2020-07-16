@@ -8,10 +8,9 @@ namespace BLEBWS.ViewModels
     using System.Threading.Tasks;
     using BLEBWS.ViewInterfaces;
     using BLEBWS.ViewModelInterfaces;
-    using Plugin.Permissions;
-    using Plugin.Permissions.Abstractions;
     using Vssl.Samples.FrameworkInterfaces;
     using Vssl.Samples.ViewModels;
+    using Xamarin.Essentials;
 
     /// <summary>
     /// Requests the required permissions
@@ -48,16 +47,16 @@ namespace BLEBWS.ViewModels
         {
             try
             {
-                var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Location);
+                var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>();
                 if (status != PermissionStatus.Granted)
                 {
-                    if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Location))
-                    {
-                        await promptWithReason("Required for bluetooth access");
-                    }
+                    ////if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Location))
+                    ////{
+                    ////    await promptWithReason("Required for bluetooth access");
+                    ////}
 
-                    var statuses = await CrossPermissions.Current.RequestPermissionsAsync((new List<Permission>() { Permission.Location }).ToArray());
-                    if (!statuses.All(s => s.Value == PermissionStatus.Granted))
+                    status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
+                    if (status != PermissionStatus.Granted)
                     {
                         this.dialogService.Notice("Permissions not granted - ending");
                         await Task.Delay(TimeSpan.FromSeconds(10));

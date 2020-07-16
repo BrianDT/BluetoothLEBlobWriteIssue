@@ -14,7 +14,6 @@ namespace BluetoothLEBlobWriteIssueServerApp.Droid.Services
     using Android.Views;
     using Android.Widget;
     using BLEBWS.ViewInterfaces;
-    using Plugin.CurrentActivity;
     using Vssl.Samples.FrameworkInterfaces;
 
     /// <summary>
@@ -42,7 +41,7 @@ namespace BluetoothLEBlobWriteIssueServerApp.Droid.Services
         /// <param name="message">The message to display</param>
         public void Notice(string message)
         {
-            var activity = CrossCurrentActivity.Current.Activity;
+            var activity = Xamarin.Essentials.Platform.CurrentActivity;
             this.dispatcher.Invoke(() => Toast.MakeText(activity, message, ToastLength.Long).Show());
         }
     }

@@ -10,8 +10,8 @@ namespace BluetoothLEBlobWriteIssueServerApp.Droid
     using Android.Runtime;
     using Android.Views;
     using Android.Widget;
+    using BluetoothLEBlobWriteIssueServerApp.Droid.Services;
     using BluetoothLEBlobWriteIssueServerApp.Views;
-    using Plugin.Permissions;
 
     /// <summary>
     /// The main activity of the Android app
@@ -27,7 +27,7 @@ namespace BluetoothLEBlobWriteIssueServerApp.Droid
         /// <param name="grantResults">The results of the grant indicating whether the grant was approved or not</param>
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
         {
-            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
@@ -41,6 +41,7 @@ namespace BluetoothLEBlobWriteIssueServerApp.Droid
             MainActivity.ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             this.LoadApplication(new App());
         }
